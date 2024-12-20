@@ -80,6 +80,77 @@ impl Card {
             Rank::Ace => 11,
         }
     }
+
+    pub fn get_art(&self) -> &'static str {
+        // ASCII for the suits:
+        // Spades: ♠
+        // Hearts: ♥
+        // Diamonds: ♦
+        // Clubs: ♣
+
+        match self.suit {
+            Suit::Spades => match self.rank {
+                Rank::Two => "2♠",
+                Rank::Three => "3♠",
+                Rank::Four => "4♠",
+                Rank::Five => "5♠",
+                Rank::Six => "6♠",
+                Rank::Seven => "7♠",
+                Rank::Eight => "8♠",
+                Rank::Nine => "9♠",
+                Rank::Ten => "10♠",
+                Rank::Jack => "J♠",
+                Rank::Queen => "Q♠",
+                Rank::King => "K♠",
+                Rank::Ace => "A♠",
+            },
+            Suit::Hearts => match self.rank {
+                Rank::Two => "2♥",
+                Rank::Three => "3♥",
+                Rank::Four => "4♥",
+                Rank::Five => "5♥",
+                Rank::Six => "6♥",
+                Rank::Seven => "7♥",
+                Rank::Eight => "8♥",
+                Rank::Nine => "9♥",
+                Rank::Ten => "10♥",
+                Rank::Jack => "J♥",
+                Rank::Queen => "Q♥",
+                Rank::King => "K♥",
+                Rank::Ace => "A♥",
+            },
+            Suit::Diamonds => match self.rank {
+                Rank::Two => "2♦",
+                Rank::Three => "3♦",
+                Rank::Four => "4♦",
+                Rank::Five => "5♦",
+                Rank::Six => "6♦",
+                Rank::Seven => "7♦",
+                Rank::Eight => "8♦",
+                Rank::Nine => "9♦",
+                Rank::Ten => "10♦",
+                Rank::Jack => "J♦",
+                Rank::Queen => "Q♦",
+                Rank::King => "K♦",
+                Rank::Ace => "A♦",
+            },
+            Suit::Clubs => match self.rank {
+                Rank::Two => "2♣",
+                Rank::Three => "3♣",
+                Rank::Four => "4♣",
+                Rank::Five => "5♣",
+                Rank::Six => "6♣",
+                Rank::Seven => "7♣",
+                Rank::Eight => "8♣",
+                Rank::Nine => "9♣",
+                Rank::Ten => "10♣",
+                Rank::Jack => "J♣",
+                Rank::Queen => "Q♣",
+                Rank::King => "K♣",
+                Rank::Ace => "A♣",
+            },
+        }
+    }
 }
 
 pub struct Deck {

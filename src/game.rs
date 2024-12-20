@@ -52,7 +52,7 @@ impl Game {
         let mut formatted_hand = String::new();
         formatted_hand.push_str("Player hand: ");
         for card in &self.player_hand {
-            formatted_hand.push_str(&format!("a {} of {}, ", card.rank, card.suit));
+            formatted_hand.push_str(&format!("[{}] ", Card::get_art(card)));
         }
         formatted_hand
     }
@@ -61,8 +61,10 @@ impl Game {
         let mut formatted_hand = String::new();
         formatted_hand.push_str("Dealer hand: ");
         for card in &self.dealer_hand {
-            formatted_hand.push_str(&format!("{} of {}, ", card.rank, card.suit));
+            formatted_hand.push_str(&format!("[{}] ", Card::get_art(card)));
         }
         formatted_hand
     }
-}
+
+    
+}   
