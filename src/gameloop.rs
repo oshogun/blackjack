@@ -172,13 +172,10 @@ fn play_a_game(game: &mut Game) -> GameResult {
                     println!("Dealer busts!");
                     result = GameResult::PlayerWins;
                 } else if game.dealer_value() > game.player_value() {
-                    println!("Dealer wins!");
                     result = GameResult::DealerWins;
                 } else if game.dealer_value() < game.player_value() {
-                    println!("Player wins!");
                     result = GameResult::PlayerWins;
                 } else {
-                    println!("It's a tie!");
                     result = GameResult::Tie;
                 }
                 break;
